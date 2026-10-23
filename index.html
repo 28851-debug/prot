@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allyson de Santana Almeida — Portfólio Pessoal</title>
+  <meta name="description" content="Portfólio de Allyson de Santana Almeida — Estudante de Tecnologia da Informação no Colégio Raphael Di Santo, desenvolvendo habilidades e construindo trajetória profissional.">
+  <meta name="author" content="Allyson de Santana Almeida">
+  <meta name="theme-color" content="#090a0d">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Allyson de Santana Almeida — Portfólio Pessoal">
+  <meta property="og:description" content="Estudante de Tecnologia da Informação no Colégio Raphael Di Santo. Conheça minha trajetória em formação.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts com Fallbacks Locais no CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Link de acessibilidade para salto de conteúdo -->
+  <a href="#hero-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Fundo com grid editorial e detalhes gráficos sutis -->
+  <div class="ambient-grid" aria-hidden="true">
+    <div class="grid-line horizontal top"></div>
+    <div class="grid-line horizontal middle"></div>
+    <div class="grid-line vertical left"></div>
+    <div class="grid-line vertical right"></div>
+    <div class="ambient-glow" id="ambient-glow"></div>
+  </div>
+
+  <!-- Cabeçalho mínimo de contexto editorial -->
+  <header class="editorial-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-monogram">ASA</span>
+        <span class="brand-fullname">Allyson de Santana Almeida</span>
+      </div>
+      <div class="header-meta">
+        <span class="meta-tag">Tecnologia da Informação</span>
+        <span class="meta-divider" aria-hidden="true">•</span>
+        <span class="meta-location">Campinas, SP</span>
+      </div>
+      <div class="header-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Em formação escolar</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Hero — Escopo Exclusivo desta Etapa -->
+  <main id="hero-content" class="hero-stage">
+    <div class="hero-container">
+      
+      <!-- Linha superior do Hero: Coordenadas e identificação de etapa -->
+      <div class="hero-meta-bar">
+        <div class="editorial-stamp">
+          <span class="stamp-index">ETAPA 01</span>
+          <span class="stamp-label">HERO & IDENTIDADE</span>
+        </div>
+        <div class="coordinates-stamp" aria-label="Localidade de referência: Campinas, São Paulo, Brasil">
+          <span class="coord-icon" aria-hidden="true">✦</span>
+          <span>22.9064° S, 47.0616° W</span>
+          <span class="coord-city">Campinas, SP</span>
+        </div>
+      </div>
+
+      <!-- Estrutura principal da composição assimétrica -->
+      <div class="hero-composition">
+        
+        <!-- Bloco Principal do Nome: Destaque tipográfico absoluto -->
+        <div class="hero-identity">
+          <div class="identity-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span class="badge-text">Estudante de TI • Colégio Raphael Di Santo</span>
+          </div>
+
+          <h1 class="hero-name" aria-label="Allyson de Santana Almeida">
+            <span class="name-line line-first">Allyson</span>
+            <span class="name-line line-middle">de Santana</span>
+            <span class="name-line line-last">Almeida</span>
+          </h1>
+
+          <div class="hero-identity-foot">
+            <span class="foot-detail">Nascido em Campinas, SP</span>
+            <span class="foot-bullet" aria-hidden="true">—</span>
+            <span class="foot-detail">Construindo trajetória na área tecnológica</span>
+          </div>
+        </div>
+
+        <!-- Bloco Complementar: Apresentação autêntica e Ação funcional -->
+        <div class="hero-narrative">
+          <div class="narrative-card">
+            <div class="card-header">
+              <span class="card-number">01</span>
+              <span class="card-title">Apresentação</span>
+            </div>
+
+            <p class="hero-description">
+              Estudante de Tecnologia da Informação, construindo minha trajetória escolar desde os primeiros anos no Colégio Raphael Di Santo. Curiosidade, aprendizado contínuo e paixão pela tecnologia conduzem cada passo do meu desenvolvimento e da minha preparação profissional.
+            </p>
+
+            <div class="hero-academic-path">
+              <div class="path-item">
+                <span class="path-label">Formação Atual</span>
+                <span class="path-value">Ensino e Estudos em Tecnologia da Informação</span>
+              </div>
+              <div class="path-item">
+                <span class="path-label">Instituição</span>
+                <span class="path-value">Colégio Raphael Di Santo (desde o 6º ano)</span>
+              </div>
+              <div class="path-item">
+                <span class="path-label">Origem</span>
+                <span class="path-value">Campinas, São Paulo, Brasil</span>
+              </div>
+            </div>
+
+            <!-- Chamada para ação com função real e acessível -->
+            <div class="hero-action-group">
+              <button 
+                type="button" 
+                id="cta-explore" 
+                class="btn-cta" 
+                aria-haspopup="dialog" 
+                aria-expanded="false" 
+                aria-controls="trajectory-drawer"
+              >
+                <span class="btn-cta-text">Explore meu caminho</span>
+                <span class="btn-cta-icon" aria-hidden="true">
+                  <svg class="arrow-glyph default" viewBox="0 0 16 16" fill="none">
+                    <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg class="arrow-glyph clone" viewBox="0 0 16 16" fill="none">
+                    <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+
+              <span class="action-note" id="cta-info">
+                Interação informativa da fase inicial
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rodapé discreto integrado ao Hero -->
+      <footer class="hero-editorial-footer">
+        <div class="footer-segment">
+          <span class="tech-indicator"></span>
+          <span>Perfil Acadêmico Autoral</span>
+        </div>
+        <div class="footer-segment center">
+          <span>Colégio Raphael Di Santo • Trajetória em andamento</span>
+        </div>
+        <div class="footer-segment right">
+          <span>© Allyson de Santana Almeida</span>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Modal/Painel Funcional do CTA para a Próxima Etapa -->
+  <div 
+    id="trajectory-drawer" 
+    class="drawer-overlay" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="drawer-heading" 
+    aria-hidden="true" 
+    hidden
+  >
+    <div class="drawer-backdrop" id="drawer-backdrop" tabindex="-1"></div>
+    
+    <div class="drawer-window" role="document">
+      <div class="drawer-header-bar">
+        <div class="drawer-tag">
+          <span class="drawer-tag-dot" aria-hidden="true"></span>
+          <span>Status do Desenvolvimento</span>
+        </div>
+        <button 
+          type="button" 
+          id="drawer-close-btn" 
+          class="drawer-close-button" 
+          aria-label="Fechar painel informativo"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer-body">
+        <h2 id="drawer-heading" class="drawer-heading">
+          Próxima etapa do portfólio em desenvolvimento
+        </h2>
+
+        <p class="drawer-text">
+          Você está visualizando a etapa inicial do meu portfólio pessoal, com foco exclusivo na apresentação da minha identidade visual e no meu interesse pela área de Tecnologia da Informação.
+        </p>
+
+        <p class="drawer-text">
+          As seções de aprofundamento — incluindo minha evolução de estudos no <strong>Colégio Raphael Di Santo</strong> (onde estudo desde o sexto ano), projetos práticos e habilidades técnicas consolidadas — serão publicadas na próxima etapa de desenvolvimento.
+        </p>
+
+        <div class="drawer-info-grid">
+          <div class="drawer-info-item">
+            <span class="info-label">Nome Completo</span>
+            <span class="info-data">Allyson de Santana Almeida</span>
+          </div>
+          <div class="drawer-info-item">
+            <span class="info-label">Área Principal</span>
+            <span class="info-data">Tecnologia da Informação</span>
+          </div>
+          <div class="drawer-info-item">
+            <span class="info-label">Instituição de Ensino</span>
+            <span class="info-data">Colégio Raphael Di Santo</span>
+          </div>
+          <div class="drawer-info-item">
+            <span class="info-label">Cidade Natal</span>
+            <span class="info-data">Campinas, São Paulo, Brasil</span>
+          </div>
+        </div>
+
+        <div class="drawer-actions">
+          <button type="button" id="drawer-ok-btn" class="drawer-confirm-btn">
+            Entendido, continuar explorando
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
