@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allyson de Santana Almeida — Portfólio Pessoal</title>
-  <meta name="description" content="Portfólio de Allyson de Santana Almeida — Estudante de Tecnologia da Informação no Colégio Raphael Di Santo, desenvolvendo habilidades e construindo trajetória profissional.">
+  <title>Allyson de Santana Almeida — Narrativa & Portfólio Pessoal</title>
+  <meta name="description" content="Narrativa pessoal e portfólio de Allyson de Santana Almeida — Estudante de Tecnologia da Informação no Colégio Raphael Di Santo em Campinas, SP.">
   <meta name="author" content="Allyson de Santana Almeida">
   <meta name="theme-color" content="#090a0d">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Allyson de Santana Almeida — Portfólio Pessoal">
-  <meta property="og:description" content="Estudante de Tecnologia da Informação no Colégio Raphael Di Santo. Conheça minha trajetória em formação.">
+  <meta property="og:description" content="Estudante de Tecnologia da Informação no Colégio Raphael Di Santo. Conheça minha trajetória e interesses.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts com Fallbacks Locais no CSS -->
+  <!-- Tipografia: Google Fonts com Fallbacks Locais no CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -22,222 +22,448 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Link de acessibilidade para salto de conteúdo -->
-  <a href="#hero-content" class="skip-link">Pular para o conteúdo principal</a>
+  <!-- Barra de progresso de leitura no topo -->
+  <div 
+    id="reading-progress" 
+    class="reading-progress" 
+    role="progressbar" 
+    aria-label="Progresso de leitura da narrativa" 
+    aria-valuemin="0" 
+    aria-valuemax="100" 
+    aria-valuenow="0"
+  ></div>
 
-  <!-- Fundo com grid editorial e detalhes gráficos sutis -->
+  <!-- Link de acessibilidade para salto de conteúdo -->
+  <a href="#hero" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Fundo com grid editorial e elementos decorativos com parallax limitado -->
   <div class="ambient-grid" aria-hidden="true">
     <div class="grid-line horizontal top"></div>
-    <div class="grid-line horizontal middle"></div>
+    <div class="grid-line horizontal middle" data-parallax="true" data-parallax-speed="0.08"></div>
     <div class="grid-line vertical left"></div>
     <div class="grid-line vertical right"></div>
-    <div class="ambient-glow" id="ambient-glow"></div>
+    <div class="deco-orbit" data-parallax="true" data-parallax-speed="0.12"></div>
+    <div class="ambient-glow" id="ambient-glow" data-parallax="true" data-parallax-speed="0.05"></div>
   </div>
 
-  <!-- Cabeçalho mínimo de contexto editorial -->
+  <!-- Cabeçalho fixo com navegação editorial -->
   <header class="editorial-header">
     <div class="header-inner">
-      <div class="header-brand">
+      <a href="#hero" class="header-brand" aria-label="Ir para o início — Allyson de Santana Almeida">
         <span class="brand-monogram">ASA</span>
         <span class="brand-fullname">Allyson de Santana Almeida</span>
-      </div>
-      <div class="header-meta">
-        <span class="meta-tag">Tecnologia da Informação</span>
-        <span class="meta-divider" aria-hidden="true">•</span>
-        <span class="meta-location">Campinas, SP</span>
-      </div>
+      </a>
+
+      <nav class="header-nav" aria-label="Navegação pelos capítulos">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">Quem sou</a></li>
+          <li><a href="#trajectory" class="nav-link">Trajetória</a></li>
+          <li><a href="#interests" class="nav-link">Interesses</a></li>
+          <li><a href="#building" class="nav-link">Construção</a></li>
+          <li><a href="#journey" class="nav-link">Jornada</a></li>
+        </ul>
+      </nav>
+
       <div class="header-status">
         <span class="status-dot" aria-hidden="true"></span>
-        <span class="status-text">Em formação escolar</span>
+        <span class="status-text">TI • Raphael Di Santo</span>
       </div>
     </div>
   </header>
 
-  <!-- Seção Hero — Escopo Exclusivo desta Etapa -->
-  <main id="hero-content" class="hero-stage">
-    <div class="hero-container">
-      
-      <!-- Linha superior do Hero: Coordenadas e identificação de etapa -->
-      <div class="hero-meta-bar">
-        <div class="editorial-stamp">
-          <span class="stamp-index">ETAPA 01</span>
-          <span class="stamp-label">HERO & IDENTIDADE</span>
-        </div>
-        <div class="coordinates-stamp" aria-label="Localidade de referência: Campinas, São Paulo, Brasil">
-          <span class="coord-icon" aria-hidden="true">✦</span>
-          <span>22.9064° S, 47.0616° W</span>
-          <span class="coord-city">Campinas, SP</span>
-        </div>
-      </div>
-
-      <!-- Estrutura principal da composição assimétrica -->
-      <div class="hero-composition">
-        
-        <!-- Bloco Principal do Nome: Destaque tipográfico absoluto -->
-        <div class="hero-identity">
-          <div class="identity-badge">
-            <span class="badge-dot" aria-hidden="true"></span>
-            <span class="badge-text">Estudante de TI • Colégio Raphael Di Santo</span>
-          </div>
-
-          <h1 class="hero-name" aria-label="Allyson de Santana Almeida">
-            <span class="name-line line-first">Allyson</span>
-            <span class="name-line line-middle">de Santana</span>
-            <span class="name-line line-last">Almeida</span>
-          </h1>
-
-          <div class="hero-identity-foot">
-            <span class="foot-detail">Nascido em Campinas, SP</span>
-            <span class="foot-bullet" aria-hidden="true">—</span>
-            <span class="foot-detail">Construindo trajetória na área tecnológica</span>
-          </div>
-        </div>
-
-        <!-- Bloco Complementar: Apresentação autêntica e Ação funcional -->
-        <div class="hero-narrative">
-          <div class="narrative-card">
-            <div class="card-header">
-              <span class="card-number">01</span>
-              <span class="card-title">Apresentação</span>
-            </div>
-
-            <p class="hero-description">
-              Estudante de Tecnologia da Informação, construindo minha trajetória escolar desde os primeiros anos no Colégio Raphael Di Santo. Curiosidade, aprendizado contínuo e paixão pela tecnologia conduzem cada passo do meu desenvolvimento e da minha preparação profissional.
-            </p>
-
-            <div class="hero-academic-path">
-              <div class="path-item">
-                <span class="path-label">Formação Atual</span>
-                <span class="path-value">Ensino e Estudos em Tecnologia da Informação</span>
-              </div>
-              <div class="path-item">
-                <span class="path-label">Instituição</span>
-                <span class="path-value">Colégio Raphael Di Santo (desde o 6º ano)</span>
-              </div>
-              <div class="path-item">
-                <span class="path-label">Origem</span>
-                <span class="path-value">Campinas, São Paulo, Brasil</span>
-              </div>
-            </div>
-
-            <!-- Chamada para ação com função real e acessível -->
-            <div class="hero-action-group">
-              <button 
-                type="button" 
-                id="cta-explore" 
-                class="btn-cta" 
-                aria-haspopup="dialog" 
-                aria-expanded="false" 
-                aria-controls="trajectory-drawer"
-              >
-                <span class="btn-cta-text">Explore meu caminho</span>
-                <span class="btn-cta-icon" aria-hidden="true">
-                  <svg class="arrow-glyph default" viewBox="0 0 16 16" fill="none">
-                    <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <svg class="arrow-glyph clone" viewBox="0 0 16 16" fill="none">
-                    <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </button>
-
-              <span class="action-note" id="cta-info">
-                Interação informativa da fase inicial
-              </span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Rodapé discreto integrado ao Hero -->
-      <footer class="hero-editorial-footer">
-        <div class="footer-segment">
-          <span class="tech-indicator"></span>
-          <span>Perfil Acadêmico Autoral</span>
-        </div>
-        <div class="footer-segment center">
-          <span>Colégio Raphael Di Santo • Trajetória em andamento</span>
-        </div>
-        <div class="footer-segment right">
-          <span>© Allyson de Santana Almeida</span>
-        </div>
-      </footer>
-
-    </div>
-  </main>
-
-  <!-- Modal/Painel Funcional do CTA para a Próxima Etapa -->
-  <div 
-    id="trajectory-drawer" 
-    class="drawer-overlay" 
-    role="dialog" 
-    aria-modal="true" 
-    aria-labelledby="drawer-heading" 
-    aria-hidden="true" 
-    hidden
-  >
-    <div class="drawer-backdrop" id="drawer-backdrop" tabindex="-1"></div>
+  <main id="main-content">
     
-    <div class="drawer-window" role="document">
-      <div class="drawer-header-bar">
-        <div class="drawer-tag">
-          <span class="drawer-tag-dot" aria-hidden="true"></span>
-          <span>Status do Desenvolvimento</span>
+    <!-- ====================================================================
+         1. HERO SECTION (#hero)
+         ==================================================================== -->
+    <section id="hero" class="hero-stage">
+      <div class="hero-container">
+        
+        <div class="hero-meta-bar reveal-item">
+          <div class="editorial-stamp">
+            <span class="stamp-index">CAPÍTULO 00</span>
+            <span class="stamp-label">INÍCIO DA NARRATIVA</span>
+          </div>
+          <div class="coordinates-stamp" aria-label="Localidade de nascimento: Campinas, São Paulo, Brasil">
+            <span class="coord-icon" aria-hidden="true">✦</span>
+            <span>22.9064° S, 47.0616° W</span>
+            <span class="coord-city">Campinas, SP</span>
+          </div>
         </div>
-        <button 
-          type="button" 
-          id="drawer-close-btn" 
-          class="drawer-close-button" 
-          aria-label="Fechar painel informativo"
-        >
-          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+
+        <div class="hero-composition">
+          <div class="hero-identity reveal-item">
+            <div class="identity-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              <span class="badge-text">Estudante de Tecnologia da Informação</span>
+            </div>
+
+            <h1 class="hero-name" aria-label="Allyson de Santana Almeida">
+              <span class="name-line line-first">Allyson</span>
+              <span class="name-line line-middle">de Santana</span>
+              <span class="name-line line-last">Almeida</span>
+            </h1>
+
+            <div class="hero-identity-foot">
+              <span class="foot-detail">Nascido em Campinas, SP</span>
+              <span class="foot-bullet" aria-hidden="true">—</span>
+              <span class="foot-detail">Colégio Raphael Di Santo desde o 6º ano</span>
+            </div>
+          </div>
+
+          <div class="hero-narrative reveal-item">
+            <div class="narrative-card">
+              <div class="card-header">
+                <span class="card-number">00</span>
+                <span class="card-title">Apresentação</span>
+              </div>
+
+              <p class="hero-description">
+                Estudante de Tecnologia da Informação, desenvolvendo minha trajetória com dedicação desde os primeiros anos no Colégio Raphael Di Santo. Movido pela curiosidade intelectual, pelo raciocínio lógico e pela vontade constante de aprender.
+              </p>
+
+              <div class="hero-academic-path">
+                <div class="path-item">
+                  <span class="path-label">Área de Estudo</span>
+                  <span class="path-value">Tecnologia da Informação</span>
+                </div>
+                <div class="path-item">
+                  <span class="path-label">Instituição</span>
+                  <span class="path-value">Colégio Raphael Di Santo (desde o sexto ano)</span>
+                </div>
+                <div class="path-item">
+                  <span class="path-label">Origem</span>
+                  <span class="path-value">Campinas, São Paulo, Brasil</span>
+                </div>
+              </div>
+
+              <!-- CTA Nativo para a seção #about -->
+              <div class="hero-action-group">
+                <a href="#about" class="btn-cta" id="hero-cta">
+                  <span class="btn-cta-text">Conheça minha trajetória</span>
+                  <span class="btn-cta-icon" aria-hidden="true">
+                    <svg class="arrow-glyph default" viewBox="0 0 16 16" fill="none">
+                      <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="arrow-glyph clone" viewBox="0 0 16 16" fill="none">
+                      <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador visual de rolagem nativo para #about -->
+        <div class="hero-scroll-wrap reveal-item">
+          <a href="#about" class="hero-scroll-indicator" aria-label="Rolar para o capítulo Quem sou">
+            <span class="scroll-text">Rolar para explorar</span>
+            <span class="scroll-line-track" aria-hidden="true">
+              <span class="scroll-line-thumb"></span>
+            </span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="drawer-body">
-        <h2 id="drawer-heading" class="drawer-heading">
-          Próxima etapa do portfólio em desenvolvimento
-        </h2>
-
-        <p class="drawer-text">
-          Você está visualizando a etapa inicial do meu portfólio pessoal, com foco exclusivo na apresentação da minha identidade visual e no meu interesse pela área de Tecnologia da Informação.
-        </p>
-
-        <p class="drawer-text">
-          As seções de aprofundamento — incluindo minha evolução de estudos no <strong>Colégio Raphael Di Santo</strong> (onde estudo desde o sexto ano), projetos práticos e habilidades técnicas consolidadas — serão publicadas na próxima etapa de desenvolvimento.
-        </p>
-
-        <div class="drawer-info-grid">
-          <div class="drawer-info-item">
-            <span class="info-label">Nome Completo</span>
-            <span class="info-data">Allyson de Santana Almeida</span>
+    <!-- ====================================================================
+         2. QUEM SOU (#about)
+         ==================================================================== -->
+    <section id="about" class="chapter-section chapter-about">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">01</span>
+            <span class="chapter-label">IDENTIDADE & ESSÊNCIA</span>
           </div>
-          <div class="drawer-info-item">
-            <span class="info-label">Área Principal</span>
-            <span class="info-data">Tecnologia da Informação</span>
+          <h2 class="chapter-title">Quem sou</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-lead reveal-item">
+            <p class="lead-statement">
+              Uma trajetória construída com seriedade, curiosidade investigativa e dedicação diária aos fundamentos da tecnologia.
+            </p>
+            <div class="origin-stamp" aria-label="Origem e região de referência">
+              <span class="stamp-bullet" aria-hidden="true">✦</span>
+              <span>Campinas, São Paulo • Região do Garcia como referência formativa</span>
+            </div>
           </div>
-          <div class="drawer-info-item">
-            <span class="info-label">Instituição de Ensino</span>
-            <span class="info-data">Colégio Raphael Di Santo</span>
-          </div>
-          <div class="drawer-info-item">
-            <span class="info-label">Cidade Natal</span>
-            <span class="info-data">Campinas, São Paulo, Brasil</span>
+
+          <div class="about-text-column reveal-item">
+            <p class="paragraph">
+              Sou estudante de Tecnologia da Informação, nascido em Campinas, São Paulo. Desde cedo, compreendi o estudo não apenas como uma obrigação escolar, mas como o meio definitivo de expandir a percepção sobre como o mundo contemporâneo é estruturado.
+            </p>
+            <p class="paragraph">
+              Minha formação escolar no Colégio Raphael Di Santo, onde estudo desde o sexto ano, consolidou valores de disciplina, respeito ao processo de maturação intelectual e entusiasmo diante do raciocínio analítico. O interesse pela Tecnologia da Informação surgiu de forma natural, a partir da vontade de entender como dados, arquiteturas e sistemas digitais se articulam para solucionar desafios reais.
+            </p>
+            
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <span class="highlight-caption">Postura</span>
+                <span class="highlight-value">Curiosidade e aprendizado contínuo</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-caption">Foco</span>
+                <span class="highlight-value">Fundamentos em Tecnologia da Informação</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-caption">Escola</span>
+                <span class="highlight-value">Colégio Raphael Di Santo</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="drawer-actions">
-          <button type="button" id="drawer-ok-btn" class="drawer-confirm-btn">
-            Entendido, continuar explorando
-          </button>
-        </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- ====================================================================
+         3. MINHA TRAJETÓRIA (#trajectory)
+         ==================================================================== -->
+    <section id="trajectory" class="chapter-section chapter-trajectory">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">02</span>
+            <span class="chapter-label">LINHA DO TEMPO ESCOLAR</span>
+          </div>
+          <h2 class="chapter-title">Minha trajetória</h2>
+          <p class="chapter-subtitle">
+            A continuidade escolar como base firme para o amadurecimento e a escolha da Tecnologia da Informação.
+          </p>
+        </header>
+
+        <!-- Timeline semântica com wrapper, linha externa ao ol e marcadores por item -->
+        <div class="timeline reveal-item">
+          <div class="timeline__line" aria-hidden="true"></div>
+
+          <ol class="timeline__list">
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 01</span>
+                  <span class="timeline__place">Colégio Raphael Di Santo</span>
+                </div>
+                <h3 class="timeline__heading">Ingresso no Sexto Ano</h3>
+                <p class="timeline__desc">
+                  Entrada no Colégio Raphael Di Santo no sexto ano do ensino fundamental, dando início a uma jornada de estabilidade acadêmica, convivência e formação de disciplina de estudos.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 02</span>
+                  <span class="timeline__place">Curiosidade Ativa</span>
+                </div>
+                <h3 class="timeline__heading">Descoberta da Tecnologia</h3>
+                <p class="timeline__desc">
+                  Durante os anos de convivência escolar, a curiosidade sobre funcionamento de computadores, lógica e ambientes digitais transformou-se em interesse concentrado na área de TI.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 03</span>
+                  <span class="timeline__place">Formação em Curso</span>
+                </div>
+                <h3 class="timeline__heading">Estudante de Tecnologia da Informação</h3>
+                <p class="timeline__desc">
+                  Dedicação aos estudos de Tecnologia da Informação, consolidando conhecimentos essenciais, exercitando raciocínio crítico e estruturando a preparação para uma trajetória profissional na área.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. O QUE ME INTERESSA (#interests)
+         ==================================================================== -->
+    <section id="interests" class="chapter-section chapter-interests">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">03</span>
+            <span class="chapter-label">CAMPOS DE ATENÇÃO</span>
+          </div>
+          <h2 class="chapter-title">O que me interessa</h2>
+          <p class="chapter-subtitle">
+            A essência da computação e a resolução de problemas como catalisadores do aprendizado.
+          </p>
+        </header>
+
+        <div class="interests-grid">
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">01</span>
+              <span class="interest-badge">Lógica</span>
+            </div>
+            <h3 class="interest-title">Fundamentos da Tecnologia da Informação</h3>
+            <p class="interest-desc">
+              Compreender os princípios essenciais que regem a computação, a infraestrutura dos sistemas, o fluxo de dados e a arquitetura de processamento que move o ambiente digital.
+            </p>
+          </article>
+
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">02</span>
+              <span class="interest-badge">Método</span>
+            </div>
+            <h3 class="interest-title">Raciocínio Analítico e Estruturado</h3>
+            <p class="interest-desc">
+              O fascínio por decompor desafios complexos em etapas lógicas menores, exercitando a resolução metódica de problemas e o pensamento computacional com clareza.
+            </p>
+          </article>
+
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">03</span>
+              <span class="interest-badge">Evolução</span>
+            </div>
+            <h3 class="interest-title">Aprendizado e Aperfeiçoamento Contínuo</h3>
+            <p class="interest-desc">
+              A consciência de que a tecnologia exige postura aberta ao novo, capacidade de autocrítica, busca ativa por conhecimento e persistência diante de conteúdos desafiadores.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. O QUE ESTOU CONSTRUINDO (#building)
+         ==================================================================== -->
+    <section id="building" class="chapter-section chapter-building">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">04</span>
+            <span class="chapter-label">ALICERCES EM DESENVOLVIMENTO</span>
+          </div>
+          <h2 class="chapter-title">O que estou construindo</h2>
+        </header>
+
+        <div class="building-layout">
+          <div class="building-main-card reveal-item">
+            <span class="building-quote-mark" aria-hidden="true">“</span>
+            <h3 class="building-headline">
+              Construir uma trajetória profissional sólida começa pelo domínio sincero da base escolar e técnica.
+            </h3>
+            <p class="building-lead">
+              Meu foco atual não reside em títulos apressados ou experiências artificiais, mas no investimento paciente de tempo no Colégio Raphael Di Santo, consolidando disciplina de estudo e preparando uma base sólida na área de Tecnologia da Informação.
+            </p>
+          </div>
+
+          <div class="building-pillars reveal-item">
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Consolidação Acadêmica</h4>
+                <p class="pillar-text">Aproveitar plenamente o ambiente formativo do Colégio Raphael Di Santo, onde estudo desde o sexto ano, fortalecendo a dedicação aos estudos.</p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Desenvolvimento de Habilidades Reais</h4>
+                <p class="pillar-text">Dedicar tempo ao estudo dos conceitos que sustentam a Tecnologia da Informação, criando capacidade técnica real e sustentável.</p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Preparação para o Futuro</h4>
+                <p class="pillar-text">Construir passo a passo os caminhos que me permitirão atuar profissionalmente na área de tecnologia com ética, competência e propósito.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. A JORNADA CONTINUA (#journey)
+         ==================================================================== -->
+    <section id="journey" class="chapter-section chapter-journey">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">05</span>
+            <span class="chapter-label">PERSPECTIVA & FUTURO</span>
+          </div>
+          <h2 class="chapter-title">A jornada continua</h2>
+        </header>
+
+        <div class="journey-content reveal-item">
+          <p class="journey-statement">
+            Cada etapa concluída é o ponto de partida para o próximo aprendizado. O futuro em Tecnologia da Informação está sendo desenhado hoje, com dedicação diária e respeito ao tempo de crescimento.
+          </p>
+
+          <div class="journey-summary-box">
+            <div class="summary-line">
+              <span class="summary-label">Identidade</span>
+              <span class="summary-val">Allyson de Santana Almeida</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Área Principal</span>
+              <span class="summary-val">Tecnologia da Informação</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Instituição de Ensino</span>
+              <span class="summary-val">Colégio Raphael Di Santo (desde o 6º ano)</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Cidade de Nascimento</span>
+              <span class="summary-val">Campinas, São Paulo, Brasil</span>
+            </div>
+          </div>
+
+          <div class="journey-actions">
+            <!-- Link nativo de retorno ao topo para #hero -->
+            <a href="#hero" class="return-top-btn" id="return-top-btn">
+              <span>Voltar ao topo</span>
+              <span class="return-arrow" aria-hidden="true">↑</span>
+            </a>
+          </div>
+        </div>
+
+        <footer class="editorial-footer reveal-item">
+          <div class="footer-left">
+            <span class="footer-dot" aria-hidden="true"></span>
+            <span>Portfólio Pessoal Autoral • Allyson de Santana Almeida</span>
+          </div>
+          <div class="footer-center">
+            <span>Colégio Raphael Di Santo • Campinas, SP</span>
+          </div>
+          <div class="footer-right">
+            <span>Tecnologia da Informação</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>

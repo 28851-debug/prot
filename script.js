@@ -1,150 +1,142 @@
 /**
  * ==========================================================================
  * PORTFÓLIO PESSOAL — ALLYSON DE SANTANA ALMEIDA
- * Comportamento Interativo e Acessibilidade da Seção Hero (Etapa 01)
+ * Narrativa Cinematográfica: Interações, IntersectionObserver e Progresso
  * ==========================================================================
  */
 
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Elementos do CTA e Modal Informativo
-  const ctaButton = document.getElementById("cta-explore");
-  const drawerOverlay = document.getElementById("trajectory-drawer");
-  const drawerBackdrop = document.getElementById("drawer-backdrop");
-  const drawerCloseBtn = document.getElementById("drawer-close-btn");
-  const drawerOkBtn = document.getElementById("drawer-ok-btn");
-  const ambientGlow = document.getElementById("ambient-glow");
+  const root = document.documentElement;
+  const readingProgressBar = document.getElementById("reading-progress");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section[id]");
+  const parallaxElements = document.querySelectorAll('[data-parallax="true"]');
 
-  // Elementos focalizáveis dentro do modal para gerenciamento de foco (Focus Trap)
-  const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  // Detecção de preferência por redução de movimento
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let isReducedMotion = motionQuery.matches;
 
-  /**
-   * Abre o painel informativo com acessibilidade e foco controlado
-   */
-  function openTrajectoryDrawer() {
-    if (!drawerOverlay) return;
-
-    drawerOverlay.removeAttribute("hidden");
-    // Força reflow para garantir a animação de entrada
-    void drawerOverlay.offsetWidth;
-    drawerOverlay.setAttribute("aria-hidden", "false");
-
-    if (ctaButton) {
-      ctaButton.setAttribute("aria-expanded", "true");
+  motionQuery.addEventListener("change", (e) => {
+    isReducedMotion = e.matches;
+    if (isReducedMotion) {
+      root.classList.add("reduced-motion");
+      resetParallax();
+    } else {
+      root.classList.remove("reduced-motion");
     }
+  });
 
-    // Trava rolagem do corpo de fundo
-    document.body.style.overflow = "hidden";
-
-    // Direciona o foco para o botão de confirmação ou fechamento
-    if (drawerCloseBtn) {
-      drawerCloseBtn.focus();
-    }
+  if (isReducedMotion) {
+    root.classList.add("reduced-motion");
   }
 
-  /**
-   * Fecha o painel informativo e devolve o foco ao botão de origem
-   */
-  function closeTrajectoryDrawer() {
-    if (!drawerOverlay) return;
+  // Ativação do modo JS (progressive enhancement: revela animações apenas com JS habilitado)
+  root.classList.add("js-ready");
 
-    drawerOverlay.setAttribute("aria-hidden", "true");
+  /* --------------------------------------------------------------------------
+     1. IntersectionObserver para Revelação de Elementos, Linha e Marcadores
+     -------------------------------------------------------------------------- */
+  const revealElements = document.querySelectorAll(
+    ".reveal-item, .timeline__line, .timeline__marker"
+  );
 
-    if (ctaButton) {
-      ctaButton.setAttribute("aria-expanded", "false");
-    }
-
-    // Restaura rolagem
-    document.body.style.overflow = "";
-
-    // Aguarda término da transição antes de aplicar hidden
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const delay = reduceMotion ? 0 : 250;
-
-    setTimeout(() => {
-      drawerOverlay.setAttribute("hidden", "");
-      // Devolve o foco ao botão que iniciou a ação
-      if (ctaButton) {
-        ctaButton.focus();
-      }
-    }, delay);
-  }
-
-  /**
-   * Gerenciamento de teclado dentro do modal (Escape para fechar + Trap de Tab)
-   */
-  function handleDrawerKeyDown(event) {
-    if (event.key === "Escape" || event.key === "Esc") {
-      event.preventDefault();
-      closeTrajectoryDrawer();
-      return;
-    }
-
-    if (event.key === "Tab") {
-      const focusableElements = drawerOverlay.querySelectorAll(focusableSelectors);
-      if (!focusableElements.length) return;
-
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (event.shiftKey) {
-        // Se Shift + Tab e está no primeiro elemento, volta ao último
-        if (document.activeElement === firstElement) {
-          event.preventDefault();
-          lastElement.focus();
-        }
-      } else {
-        // Se Tab e está no último elemento, volta ao primeiro
-        if (document.activeElement === lastElement) {
-          event.preventDefault();
-          firstElement.focus();
-        }
-      }
-    }
-  }
-
-  // Event Listeners do CTA e do Modal
-  if (ctaButton) {
-    ctaButton.addEventListener("click", openTrajectoryDrawer);
-  }
-
-  if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener("click", closeTrajectoryDrawer);
-  }
-
-  if (drawerOkBtn) {
-    drawerOkBtn.addEventListener("click", closeTrajectoryDrawer);
-  }
-
-  if (drawerBackdrop) {
-    drawerBackdrop.addEventListener("click", closeTrajectoryDrawer);
-  }
-
-  if (drawerOverlay) {
-    drawerOverlay.addEventListener("keydown", handleDrawerKeyDown);
-  }
-
-  /**
-   * Microinteração Sutil de Movimento no Fundo (Glow Ambiental)
-   * Inspirada na elegância e controle da referência Glitch and Grit
-   * Desativada automaticamente se prefers-reduced-motion estiver ativo
-   */
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (ambientGlow && !prefersReducedMotion.matches) {
-    let ticking = false;
-
-    window.addEventListener("pointermove", (e) => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const moveX = (e.clientX / window.innerWidth - 0.5) * 60;
-          const moveY = (e.clientY / window.innerHeight - 0.5) * 60;
-          ambientGlow.style.transform = `translate(${moveX}px, ${moveY}px)`;
-          ticking = false;
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            // Elemento revelado não precisa ser observado novamente
+            observer.unobserve(entry.target);
+          }
         });
-        ticking = true;
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.1,
       }
-    }, { passive: true });
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    // Observer para atualizar estado ativo na navegação
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute("id");
+            navLinks.forEach((link) => {
+              if (link.getAttribute("href") === `#${currentId}`) {
+                link.classList.add("is-active");
+              } else {
+                link.classList.remove("is-active");
+              }
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((sec) => navObserver.observe(sec));
+  } else {
+    // Fallback gracioso caso IntersectionObserver não exista no navegador
+    revealElements.forEach((el) => el.classList.add("is-revealed"));
   }
+
+  /* --------------------------------------------------------------------------
+     2. Único Listener Global de Scroll { passive: true } com requestAnimationFrame
+     -------------------------------------------------------------------------- */
+  let ticking = false;
+
+  function updateScrollState() {
+    const scrollTop = window.scrollY || root.scrollTop || document.body.scrollTop || 0;
+    const docHeight = (root.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
+
+    // Atualiza barra de progresso com scaleX e aria-valuenow
+    if (readingProgressBar) {
+      readingProgressBar.style.transform = `scaleX(${progress})`;
+      readingProgressBar.setAttribute(
+        "aria-valuenow",
+        Math.round(progress * 100).toString()
+      );
+    }
+
+    // Parallax suave estritamente limitado a elementos decorativos (sem deslocar textos)
+    if (!isReducedMotion && parallaxElements.length > 0) {
+      parallaxElements.forEach((el) => {
+        const speed = parseFloat(el.getAttribute("data-parallax-speed")) || 0.05;
+        const translateY = scrollTop * speed;
+        el.style.transform = `translate3d(0, ${translateY}px, 0)`;
+      });
+    }
+
+    ticking = false;
+  }
+
+  function resetParallax() {
+    parallaxElements.forEach((el) => {
+      el.style.transform = "none";
+    });
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollState);
+      ticking = true;
+    }
+  }
+
+  // Apenas um listener global passivo
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Executa uma vez no carregamento para posicionamento correto
+  updateScrollState();
 });
